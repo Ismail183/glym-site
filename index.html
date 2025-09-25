@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glym.app — Marketing Hub</title>
+  <meta name="description" content="Glym.app : la landing ultra-simple pour annoncer votre nouveau site marketing." />
+  <meta property="og:title" content="Glym.app — Marketing Hub" />
+  <meta property="og:description" content="Annoncez et présentez votre site marketing avec élégance." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop" />
+  <meta name="theme-color" content="#211F1E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Palette "café marketing" */
+      --bg:#c8b9ae;        /* sable chaud */
+      --panel:#efe8e3;     /* ivoire */
+      --ink:#151515;       /* encre */
+      --muted:#5c5c5c;     /* texte secondaire */
+      --brand:#111827;     /* presque noir pour un contraste premium */
+      --brand-2:#7c3aed;   /* accent marketing */
+      --radius:22px;
+      --shadow:0 20px 60px rgba(15,15,15,.15);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial; color:var(--ink); background:var(--bg)}
+    .wrap{min-height:100svh; display:grid; place-items:center; padding:28px}
+
+    /* Card principale, rappelant l'affiche fournie */
+    .card{width:min(940px,100%); background:var(--panel); border-radius:28px; box-shadow:var(--shadow); padding:32px; position:relative; overflow:hidden}
+    .badge{font-weight:600; letter-spacing:.2px; font-size:14px; color:var(--muted)}
+    h1{font-size: clamp(36px, 6vw, 68px); line-height:1.02; margin:.15em 0 .3em}
+    .lead{font-size: clamp(16px, 2.5vw, 20px); color:var(--muted)}
+
+    /* Zone visuelle appareils */
+    .devices{position:relative; margin:32px 0 20px}
+    .laptop{position:relative; width:min(780px,92%); aspect-ratio: 16/9; background:#0f0f0f; border-radius:18px; margin-left:auto; margin-right:auto; box-shadow:0 12px 40px rgba(0,0,0,.25)}
+    .laptop::before{content:""; position:absolute; inset:8px; border-radius:12px; background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1300&auto=format&fit=crop') center/cover no-repeat}
+    .phone{position:absolute; left:5%; bottom: -8%; width:160px; aspect-ratio: 9/19.5; background:#000; border:10px solid #0d0d0d; border-radius:26px; box-shadow:0 12px 30px rgba(0,0,0,.25)}
+    .phone::before{content:""; position:absolute; inset:6px; border-radius:16px; background:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop') center/cover no-repeat}
+
+    /* Barre d'URL style "recherche" */
+    .urlbar{margin:36px auto 0; display:flex; align-items:center; gap:10px; width:min(540px,95%); background:#fff; border-radius:999px; padding:12px 16px; box-shadow:0 8px 24px rgba(0,0,0,.08); border:1px solid #e7e7e7}
+    .urlbar input{all:unset; flex:1; font-size:16px; color:#222}
+    .urlbar .dot{width:34px; height:34px; border-radius:999px; display:grid; place-items:center; background:linear-gradient(135deg,#111827,#7c3aed); color:#fff; font-weight:700}
+
+    /* CTA */
+    .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:14px; font-weight:600; border:1px solid rgba(0,0,0,.12); background:#111827; color:#fff}
+    .btn.light{background:transparent; color:#111827}
+
+    /* Bandeau bénéfices marketing */
+    .benefits{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .chip{background:#fff; border:1px solid #e5e5e5; border-radius:999px; padding:8px 12px; font-size:12px; color:#333}
+
+    /* Footer mini */
+    .foot{display:flex; justify-content:space-between; align-items:center; margin-top:26px; color:#6b6b6b; font-size:13px}
+
+    @media (max-width: 860px){
+      .phone{left:4%; bottom:-10%; width:140px}
+    }
+    @media (max-width: 560px){
+      .card{padding:22px}
+      .phone{position:relative; left:auto; bottom:auto; margin: -40px auto 8px; display:block}
+      .laptop{width:100%}
+      .cta{justify-content:center}
+      .foot{flex-direction:column; gap:8px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="badge">Glym.app</div>
+      <h1>Votre nouveau QG<br>marketing est <span style="background:linear-gradient(135deg,#111827,#7c3aed); -webkit-background-clip:text; background-clip:text; color:transparent">en ligne</span>.</h1>
+      <p class="lead">Découvrez Glym.app : un site marketing simple, clair et efficace.</p>
+
+      <div class="devices">
+        <div class="laptop"></div>
+        <div class="phone"></div>
+      </div>
+
+      <div class="urlbar" role="group" aria-label="Visiter Glym.app">
+        <span style="opacity:.65">www.</span>
+        <input value="glym.app" aria-label="Adresse du site"/>
+        <div class="dot" aria-hidden="true">↵</div>
+      </div>
+
+      <div class="cta">
+        <a class="btn" href="https://glym.app" aria-label="Ouvrir Glym.app">Visiter Glym.app</a>
+      </div>
+
+      <div class="benefits">
+        <span class="chip">⚡ Mise en ligne &lt; 10 min</span>
+        <span class="chip">📈 Tracking UTM & Webhooks</span>
+        <span class="chip">🔒 RGPD & données UE</span>
+        <span class="chip">🎯 Pensé pour le paid media</span>
+      </div>
+
+      <div class="foot">
+        <span>© <span id="year"></span> Glym.app</span>
+        <span>Marketing • Analytics • Automations</span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
